@@ -63,6 +63,8 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                        <a class="tag" href="/tags/#rem、less" title="rem、less">rem、less</a>
+                        
                     </div>
                     <h1>移动WEB_rem+less布局</h1>
                     <h2 class="subheading"></h2>
@@ -132,7 +134,28 @@
                 post-container
             ">
 
-            
+            <h3 id="1-0rem基础"><a href="#1-0rem基础" class="headerlink" title="1.0rem基础"></a>1.0rem基础</h3><p>rem(root em) 是一个相对单位，类似于em，em是父元素字体的大小。</p>
+<p>不同的是rem的基准是相对于html元素的字体大小。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* 根html 为 12px */</span><br><span class="line">html &#123;</span><br><span class="line">   font-size: 12px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 此时 div 的字体大小就是 24px */       </span><br><span class="line">div &#123;</span><br><span class="line">    font-size: 2rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>rem优势:父元素文字大小可能不一致，但是整个页面只有一个html。</p>
+<h3 id="1-1媒体查询"><a href="#1-1媒体查询" class="headerlink" title="1.1媒体查询"></a>1.1媒体查询</h3><p>媒体查询是css3新语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2less基础"><a href="#1-2less基础" class="headerlink" title="1.2less基础"></a>1.2less基础</h3><p>Less（LeanerStyle Sheets 的缩写）是一门 CSS扩展语言，也成为CSS预处理器。</p>
+<p>less运算：任何数字、颜色或者变量都可以参与运算。就是Less提供了加（+）、减（-）、乘（*）、除（/）算术运算。</p>
+<h4 id="rem实际开发适配方案1"><a href="#rem实际开发适配方案1" class="headerlink" title="rem实际开发适配方案1"></a>rem实际开发适配方案1</h4><p>①假设设计稿是750px</p>
+<p>②假设我们把整个屏幕划分为15等份（划分标准不一可以是20份也可以是10等份）</p>
+<p>③每一份作为html字体大小，这里就是50px</p>
+<p>④那么在320px设备的时候，字体大小为320/15就是  21.33px</p>
+<p>⑤用我们页面元素的大小除以不同的 html字体大小会发现他们比例还是相同的</p>
+<p>⑥比如我们以750为标准设计稿</p>
+<p>⑦一个100<em>100像素的页面元素在  750屏幕下，  就是 100/ 50  转换为rem  是  2rem</em>2rem  比例是1比1</p>
+<p>⑧320屏幕下，  html字体大小为21.33   则 2rem=  42.66px  此时宽和高都是 42.66  但是宽和高的比例还是 1比1</p>
+<p>⑨但是已经能实现不同屏幕下  页面元素盒子等比例缩放的效果</p>
+<p>总结：</p>
+<p>①最后的公式：页面元素的rem值 =  页面元素值（px） /  （屏幕宽度  /  划分的份数）</p>
+<p>②屏幕宽度/划分的份数就是 htmlfont-size 的大小</p>
+<p>③或者：页面元素的rem值 =  页面元素值（px） /  html font-size 字体大小</p>
+
 
 
             <!-- Pager -->
