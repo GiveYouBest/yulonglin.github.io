@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+<!doctype html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="前端学习">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href>
+
+    
+
+    <title>
+        
+        JavaScript-01 |
+        
+        YulongLin&#39;s Blog
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Custom CSS -->
+    <!-- ↓这是stylus文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/toc.css">
+
+
+</head>
+<body></body>
+</html>
+
+<body>
+
+<!-- Header -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+     background-image: url('');
+        /*post*/
+    
+    }
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 文章 -->
+                
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#JavaScript介绍" title="JavaScript介绍">JavaScript介绍</a>
+                        
+                    </div>
+                    <h1>JavaScript-01</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                            Posted by yulonglin on
+                        2019-04-21
+                        </span>
+                </div>
+                <!-- 非文章 -->
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Nav -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">YulongLin&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    
+                    <li><a href="/about">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Content -->
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <h3 id="1-0-JavaScript的作用"><a href="#1-0-JavaScript的作用" class="headerlink" title="1.0 JavaScript的作用"></a>1.0 JavaScript的作用</h3><ul>
+<li>表单动态校验（密码强度检测）  （ JS 产生最初的目的 ）</li>
+<li>网页特效</li>
+<li>服务器开发(Node.js)</li>
+<li>桌面程序(Electron)</li>
+<li>App(Cordova)</li>
+<li>控制硬件-物联网(Ruff)</li>
+<li>游戏开发(cocos-2d-js)</li>
+</ul>
+<h3 id="1-1HTML-CSS-JS的区别"><a href="#1-1HTML-CSS-JS的区别" class="headerlink" title="1.1HTML/CSS/JS的区别"></a>1.1HTML/CSS/JS的区别</h3><p><img src="imges/1.png" alt></p>
+<h3 id="1-2浏览器执行JS简介"><a href="#1-2浏览器执行JS简介" class="headerlink" title="1.2浏览器执行JS简介"></a>1.2浏览器执行JS简介</h3><p>浏览器分成两部分:渲染引擎和JS引擎</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">渲染引擎</th>
+<th>用来解析HTML与CSS，俗称内核，比如 chrome 浏览器的 blink ，老版本的 webkit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">JS引擎</td>
+<td>也称为 JS 解释器。 用来读取网页中的JavaScript代码，对其处理后运行，比如 chrome  <br>浏览器的 V8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-3JavaScript的组成"><a href="#1-3JavaScript的组成" class="headerlink" title="1.3JavaScript的组成"></a>1.3JavaScript的组成</h3><p><img src="imges/2.png" alt></p>
+<h4 id="1-3-1ECMAScript"><a href="#1-3-1ECMAScript" class="headerlink" title="1.3.1ECMAScript"></a>1.3.1ECMAScript</h4><p>ECMAScript 是由ECMA 国际（ 原欧洲计算机制造商协会）进行标准化的一门编程语言，这种语言在万维网上应用广泛，它往往被称为 JavaScript或 JScript，但实际上后两者是 ECMAScript 语言的实现和扩展。</p>
+<h4 id="1-3-2DOM——文档对象模型"><a href="#1-3-2DOM——文档对象模型" class="headerlink" title="1.3.2DOM——文档对象模型"></a>1.3.2DOM——文档对象模型</h4><p>文档对象模型(DocumentObject Model,简称DOM),是W3C组织推荐的处理可扩展标记语言的标准编程接口。通过 DOM 提供的接口可以对页面上的各种元素进行操作（大小、位置、颜色等）</p>
+<h4 id="1-3-3BOM——浏览器对象模型"><a href="#1-3-3BOM——浏览器对象模型" class="headerlink" title="1.3.3BOM——浏览器对象模型"></a>1.3.3BOM——浏览器对象模型</h4><p><strong>浏览器对象模型</strong>(Browser Object Model，简称BOM) 是指浏览器对象模型，它提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。通过BOM可以操作浏览器窗口，比如弹出框、控制浏览器跳转、获取分辨率等。</p>
+<h3 id="1-4JavaScript书写方式"><a href="#1-4JavaScript书写方式" class="headerlink" title="1.4JavaScript书写方式"></a>1.4JavaScript书写方式</h3><h4 id="1-4-1行内式"><a href="#1-4-1行内式" class="headerlink" title="1.4.1行内式"></a>1.4.1行内式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点我试试"</span> <span class="attr">onclick</span>=<span class="string">"alert('Hello World')"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-4-2内嵌式"><a href="#1-4-2内嵌式" class="headerlink" title="1.4.2内嵌式"></a>1.4.2内嵌式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	alert('Hello');</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-4-3外联式"><a href="#1-4-3外联式" class="headerlink" title="1.4.3外联式"></a>1.4.3外联式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"my.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-4-4JS注释方式"><a href="#1-4-4JS注释方式" class="headerlink" title="1.4.4JS注释方式"></a>1.4.4JS注释方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//单行注释</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/*多行注释*/</span><br></pre></td></tr></table></figure>
+<h3 id="1-5JavaScript输入输出语句"><a href="#1-5JavaScript输入输出语句" class="headerlink" title="1.5JavaScript输入输出语句"></a>1.5JavaScript输入输出语句</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">alert(msg)</td>
+<td style="text-align:left">浏览器弹出警示框</td>
+</tr>
+<tr>
+<td style="text-align:left">console.log(msg)</td>
+<td style="text-align:left">浏览器控制台打印 输出信息</td>
+</tr>
+<tr>
+<td style="text-align:left">prompt(info)</td>
+<td style="text-align:left">浏览器弹出输入框，用户可以输入</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-6变量与赋值"><a href="#1-6变量与赋值" class="headerlink" title="1.6变量与赋值"></a>1.6变量与赋值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//变量声明</span><br><span class="line">var age;    	//声明一个名称为age 的变量</span><br><span class="line">age=10；    	   //给age 这个变量赋值为10   =是用来把右边的值赋给左边的变量空间中</span><br><span class="line">var age=10;    // 声明且赋值</span><br><span class="line">var age=10, name=&apos;aa&apos;, sex=2;  //声明并赋值多个值 必须要用逗号隔开</span><br></pre></td></tr></table></figure>
+<h3 id="1-7变量命名规范"><a href="#1-7变量命名规范" class="headerlink" title="1.7变量命名规范"></a>1.7变量命名规范</h3><p>规则：由字母（A-Za-z）、数字、下划线(_)、$组成 <strong>不能使用数字开头</strong>、<strong>不能是关键字、保留字例如：var for while</strong></p>
+<p>严格区分大小写  </p>
+<h3 id="1-8数据类型"><a href="#1-8数据类型" class="headerlink" title="1.8数据类型"></a>1.8数据类型</h3><p>JavaScript中的简单数据类型如下：</p>
+<table>
+<thead>
+<tr>
+<th>简单数据类型</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number</td>
+<td>数字型</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>布尔值</td>
+<td>false</td>
+</tr>
+<tr>
+<td>String</td>
+<td>字符串类型</td>
+<td>“”</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>声明了变量没有赋值</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>Null</td>
+<td>空值 声明了变量为空值</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-8-2数据类型转换"><a href="#1-8-2数据类型转换" class="headerlink" title="1.8.2数据类型转换"></a>1.8.2数据类型转换</h4><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>toString()</td>
+<td>转换成字符串</td>
+<td>var num=1;alert(num.toString());</td>
+</tr>
+<tr>
+<td>String()强制转换</td>
+<td>转换成字符串</td>
+<td>var num=1; alert(String(num));</td>
+</tr>
+<tr>
+<td>parseInt(string)函数</td>
+<td>将string类型转换成整数数值型</td>
+<td>parseInt(‘78’)</td>
+</tr>
+<tr>
+<td>parseFloat(string)</td>
+<td>将string类型转换成浮点数数值型</td>
+<td>parseFloat(‘1.2’);</td>
+</tr>
+<tr>
+<td>Number()强制转换</td>
+<td>将string类型转换为数值型</td>
+<td>Number(‘12’);</td>
+</tr>
+<tr>
+<td>Boolean()</td>
+<td>其他类型转换布尔值</td>
+<td>Boolean(‘true’);</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-9关键字和保留字"><a href="#1-9关键字和保留字" class="headerlink" title="1.9关键字和保留字"></a>1.9关键字和保留字</h3><h4 id="1-9-1关键字"><a href="#1-9-1关键字" class="headerlink" title="1.9.1关键字"></a>1.9.1关键字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">关键字:JS本身已经使用过的字，不能用它当做变量名。</span><br><span class="line"></span><br><span class="line">包括：break、case、catch、continue、default、delete、do、else、finally、for、function、if、in、instanceof、new、return、switch、this、throw、try、typeof、var、void、while、with 等。</span><br></pre></td></tr></table></figure>
+<h4 id="1-9-2保留字"><a href="#1-9-2保留字" class="headerlink" title="1.9.2保留字"></a>1.9.2保留字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">保留字：实际上就是预留的“关键字”，意思是现在虽然还不是关键字，但是未来可能会成为关键字，同样不能使用它们当变量名或方法名。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">包括：boolean、byte、char、class、const、debugger、double、enum、export、extends、fimal、float、goto、implements、import、int、interface、long、mative、package、private、protected、public、short、static、super、synchronized、throws、transient、volatile 等。</span><br></pre></td></tr></table></figure>
+
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                
+                
+                <li class="next">
+                    <a href="/2019/04/21/移动WEB-响应式布局/">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YulongLin&#39;s Blog 2019
+                    <br>
+                    Theme by <a href="http://beantech.org/">Bean Tech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://yoursite.com">YulongLin&#39;s Blog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/script.js"></script>
+
+
+
+
+</body>
+</html>

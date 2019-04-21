@@ -1,4 +1,4 @@
-﻿body {
+body {
     /*font: 300 1.2em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;*/
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
     line-height: 1.7;
@@ -75,7 +75,6 @@ a:focus, a.active {
 
 .intro-header .site-heading {
     padding: 95px 0 70px;
-    font-size: 30px;
 }
 
 @media only screen and (min-width: 768px) {
