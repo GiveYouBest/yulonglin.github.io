@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+<!doctype html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="前端学习">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href>
+
+    
+
+    <title>
+        
+        Web API-01 |
+        
+        YulongLin&#39;s Blog
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Custom CSS -->
+    <!-- ↓这是stylus文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/toc.css">
+
+
+</head>
+<body></body>
+</html>
+
+<body>
+
+<!-- Header -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+     background-image: url('');
+        /*post*/
+    
+    }
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 文章 -->
+                
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#DOM" title="DOM">DOM</a>
+                        
+                    </div>
+                    <h1>Web API-01</h1>
+                    <h2 class="subheading">Web API</h2>
+                    <span class="meta">
+                            Posted by yulonglin on
+                        2019-04-25
+                        </span>
+                </div>
+                <!-- 非文章 -->
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Nav -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">YulongLin&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/Portfolio.html">Portfolio</a></li>
+                    
+                    <li><a href="/About.html">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Content -->
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <h2 id="1-Web-API介绍"><a href="#1-Web-API介绍" class="headerlink" title="1 Web API介绍"></a>1 Web API介绍</h2><h3 id="1-1-API的概念"><a href="#1-1-API的概念" class="headerlink" title="1.1 API的概念"></a>1.1 API的概念</h3><p>API(Application Programming Interface,应用程序编程接口)是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，无需理解其内部工作机制细节，只需直接调用使用即可。</p>
+<p>API是给程序员提供的一种工具，以便能更轻松的实现想要完成的功能。</p>
+<h3 id="1-2-Web-API的概念"><a href="#1-2-Web-API的概念" class="headerlink" title="1.2 Web API的概念"></a>1.2 Web API的概念</h3><p>Web API 是浏览器提供的一套操作浏览器功能和页面元素的 API ( BOM 和 DOM )。</p>
+<p>​    现阶段我们主要针对于浏览器讲解常用的 API , 主要针对浏览器做交互效果。比如我们想要浏览器弹出一个警示框， 直接使用 alert(‘弹出’)</p>
+<p>​    MDN 详细 API : <a href="https://developer.mozilla.org/zh-CN/docs/Web/API" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API</a></p>
+<p>​    因为 Web API 很多，所以我们将这个阶段称为 Web APIs。</p>
+<p>​    此处的 Web API 特指浏览器提供的一系列API(很多函数或对象方法)，即操作网页的一系列工具。例如：操作html标签、操作页面地址的方法。</p>
+<h3 id="1-3DOM-树"><a href="#1-3DOM-树" class="headerlink" title="1.3DOM 树"></a>1.3DOM 树</h3><p>DOM树 又称为文档树模型，把文档映射成树形结构，通过节点对象对其处理，处理的结果可以加入到当前的页面。</p>
+<ul>
+<li>文档：一个页面就是一个文档，DOM中使用document表示</li>
+<li>节点：网页中的所有内容，在文档树中都是节点（标签、属性、文本、注释等），使用node表示</li>
+<li>标签节点：网页中的所有标签，通常称为元素节点，又简称为“元素”，使用element表示</li>
+</ul>
+<h4 id="1-3-1-根据ID获取"><a href="#1-3-1-根据ID获取" class="headerlink" title="1.3.1 根据ID获取"></a>1.3.1 根据ID获取</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据id获取 getElementById</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"time"</span>&gt;<span class="number">2019</span><span class="number">-9</span><span class="number">-9</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 因为我们文档页面从上往下加载，所以先得有标签 所以我们script写到标签的下面</span></span><br><span class="line"><span class="regexp">        var timer = document.getElementById('time');</span></span><br><span class="line"><span class="regexp">        console.log(timer);</span></span><br><span class="line"><span class="regexp">        console.log(typeof timer);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ console.dir 打印我们返回的元素对象 更好的查看里面的属性和方法</span></span><br><span class="line"><span class="regexp">        console.dir(timer);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-3-2-根据标签名获取元素"><a href="#1-3-2-根据标签名获取元素" class="headerlink" title="1.3.2 根据标签名获取元素"></a>1.3.2 根据标签名获取元素</h4><p>案例代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据标签名获取元素   getElementsbyTagName</span></span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;知否知否，应是等你好久<span class="number">11</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;知否知否，应是等你好久22&lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;知否知否，应是等你好久<span class="number">33</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;知否知否，应是等你好久44&lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;知否知否，应是等你好久<span class="number">55</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line">    &lt;ul id=<span class="string">"nav"</span>&gt;</span><br><span class="line">        &lt;li&gt;生僻字&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;生僻字&lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;生僻字&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;生僻字&lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;生僻字&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="comment">// 1.返回的是 获取过来元素对象的集合 以伪数组的形式存储的</span></span><br><span class="line">        <span class="keyword">var</span> lis = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(lis);</span><br><span class="line">        <span class="built_in">console</span>.log(lis[<span class="number">0</span>]);</span><br><span class="line">        <span class="comment">// 2. 我们想要依次打印里面的元素对象我们可以采取遍历的方式</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; lis.length; i++) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(lis[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 3. element.getElementsByTagName()  可以得到这个元素里面的某些标签</span></span><br><span class="line">        <span class="keyword">var</span> nav = <span class="built_in">document</span>.getElementById(<span class="string">'nav'</span>); <span class="comment">// 这个获得nav 元素</span></span><br><span class="line">        <span class="keyword">var</span> navLis = nav.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(navLis);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-3-H5新增获取元素方式"><a href="#1-3-3-H5新增获取元素方式" class="headerlink" title="1.3.3 H5新增获取元素方式"></a>1.3.3 H5新增获取元素方式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据类名获取元素对象集合    getElementsByClassName('类名');</span></span><br><span class="line"><span class="comment">//根据指定选择器返回第一个元素对象  querySelector('选择器'); </span></span><br><span class="line"><span class="comment">//根据指定选择器返回元素集合  querySelectorAll('选择器');</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">  &lt;body&gt;</span></span><br><span class="line"><span class="regexp">     &lt;div class="box"&gt;盒子1&lt;/</span>div&gt;</span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;盒子<span class="number">2</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div id="nav"&gt;</span></span><br><span class="line"><span class="regexp">          &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">              &lt;li&gt;首页&lt;/</span>li&gt;</span><br><span class="line">              &lt;li&gt;产品&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/u</span>l&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">	&lt;script&gt;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/getElementsByClassName 根据类名获取某些元素集合</span></span><br><span class="line"><span class="regexp">        var boxs=document.getElementsByClassName('box');</span></span><br><span class="line"><span class="regexp">		console.log(boxs);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/querySelector 返回元素的一个元素对象   里面的选择器需要加符号</span></span><br><span class="line"><span class="regexp">		var firstBox=document.querySelector('.box');</span></span><br><span class="line"><span class="regexp">		console.log(firstBox);</span></span><br><span class="line"><span class="regexp">		var nav=document.querySelector('#nav');</span></span><br><span class="line"><span class="regexp">		console.log(nav);</span></span><br><span class="line"><span class="regexp">         var li=documnet.querySelector('li');</span></span><br><span class="line"><span class="regexp">         cosole.log(li);	</span></span><br><span class="line"><span class="regexp">		/</span><span class="regexp">/querySelectorAll() 返回指定选择器的所有元素对象集合</span></span><br><span class="line"><span class="regexp">		var allBox=document.querySelectorAll('.box');</span></span><br><span class="line"><span class="regexp">		console.log(allBox);</span></span><br><span class="line"><span class="regexp">		var lis=document.querySelectorAll('li');</span></span><br><span class="line"><span class="regexp">		console.log(lis);  </span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">  &lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-4-获取特殊元素-body-html"><a href="#1-3-4-获取特殊元素-body-html" class="headerlink" title="1.3.4 获取特殊元素(body,html)"></a>1.3.4 获取特殊元素(body,html)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//获取body元素</span><br><span class="line">document.body</span><br><span class="line"></span><br><span class="line">//获取html元素</span><br><span class="line">document.documentElement</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-事件基础"><a href="#1-4-事件基础" class="headerlink" title="1.4 事件基础"></a>1.4 事件基础</h3><h4 id="1-4-1-事件概述"><a href="#1-4-1-事件概述" class="headerlink" title="1.4.1 事件概述"></a>1.4.1 事件概述</h4><p>JavaScript 使我们有能力创建动态页面，而事件是可以被 JavaScript 侦测到的行为。</p>
+<p>简单理解： <strong>触发— 响应机制</strong>。</p>
+<p>​    网页中的每个元素都可以产生某些可以触发 JavaScript 的事件，例如，我们可以在用户点击某按钮时产生一个 事件，然后去执行某些操作。</p>
+<h4 id="1-4-2-事件三要素"><a href="#1-4-2-事件三要素" class="headerlink" title="1.4.2 事件三要素"></a>1.4.2 事件三要素</h4><ul>
+<li>事件源（谁）：触发事件的元素</li>
+<li>事件类型（什么事件）： 例如 click 点击事件</li>
+<li>事件处理程序（做啥）：事件触发后要执行的代码(函数形式)，事件处理函数</li>
+</ul>
+<p><strong>案例代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button id=<span class="string">"btn"</span>&gt;唐伯虎&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 点击一个按钮，弹出对话框</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 1. 事件是有三部分组成  事件源  事件类型  事件处理程序   我们也称为事件三要素</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/(1) 事件源 事件被触发的对象   谁  按钮</span></span><br><span class="line"><span class="regexp">        var btn = document.getElementById('btn');</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/(2) 事件类型  如何触发 什么事件 比如鼠标点击(onclick) 还是鼠标经过 还是键盘按下</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/(3) 事件处理程序  通过一个函数赋值的方式 完成</span></span><br><span class="line"><span class="regexp">        btn.onclick = function() &#123;</span></span><br><span class="line"><span class="regexp">            alert('点秋香');</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-4-3-执行事件的步骤"><a href="#1-4-3-执行事件的步骤" class="headerlink" title="1.4.3 执行事件的步骤"></a>1.4.3 执行事件的步骤</h4><p>1.获取事件源</p>
+<p>2.注册事件(绑定事件)</p>
+<p>3.添加事件处理程序(采取函数赋值形式)</p>
+<p><strong>案例代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;<span class="number">123</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 执行事件步骤</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 点击div 控制台输出 我被选中了</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 1. 获取事件源</span></span><br><span class="line"><span class="regexp">        var div = document.querySelector('div');</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 2.绑定事件 注册事件</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ div.onclick </span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 3.添加事件处理程序 </span></span><br><span class="line"><span class="regexp">        div.onclick = function() &#123;</span></span><br><span class="line"><span class="regexp">            console.log('我被选中了');</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-4-4-常见的鼠标事件"><a href="#1-4-4-常见的鼠标事件" class="headerlink" title="1.4.4 常见的鼠标事件"></a>1.4.4 常见的鼠标事件</h4><table>
+<thead>
+<tr>
+<th>鼠标事件</th>
+<th>触发条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onclick</td>
+<td>鼠标点击左键触发</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>鼠标经过触发</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>鼠标离开触发</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>获取焦点触发</td>
+</tr>
+<tr>
+<td>onblur</td>
+<td>失去焦点触发</td>
+</tr>
+<tr>
+<td>onmousemove</td>
+<td>鼠标移动触发</td>
+</tr>
+<tr>
+<td>onmouseup</td>
+<td>鼠标弹起触发</td>
+</tr>
+<tr>
+<td>onmousedown</td>
+<td>鼠标按下触发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-5-操作元素"><a href="#1-5-操作元素" class="headerlink" title="1.5 操作元素"></a>1.5 操作元素</h3><p>​    JavaScript的 DOM 操作可以改变网页内容、结构和样式，我们可以利用 DOM 操作元素来改变元素里面的内容、属性等。（注意：这些操作都是通过元素对象的属性实现的）</p>
+<h4 id="1-5-1-改变元素内容-获取或设置"><a href="#1-5-1-改变元素内容-获取或设置" class="headerlink" title="1.5.1 改变元素内容(获取或设置)"></a>1.5.1 改变元素内容(获取或设置)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.innerText //从起始位置到终止位置的内容，但它去除html标签，同时空格和换行也会去掉</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.innerHTML //起始位置到终止位置的全部内容，包括html标签，同时保留空格和换行</span><br></pre></td></tr></table></figure>
+<p><strong>innerText改变元素内容</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button&gt;显示当前系统时间&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;某个时间&lt;/</span>div&gt;</span><br><span class="line">    &lt;p&gt;<span class="number">1123</span>&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 当我们点击了按钮，  div里面的文字会发生变化</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 1. 获取元素 </span></span><br><span class="line"><span class="regexp">        var btn = document.querySelector('button');</span></span><br><span class="line"><span class="regexp">        var div = document.querySelector('div');</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 2.注册事件</span></span><br><span class="line"><span class="regexp">        btn.onclick = function() &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ div.innerText = '2019-6-6';</span></span><br><span class="line"><span class="regexp">            div.innerHTML = getDate();</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        function getDate() &#123;</span></span><br><span class="line"><span class="regexp">            var date = new Date();</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 我们写一个 2019年 5月 1日 星期三</span></span><br><span class="line"><span class="regexp">            var year = date.getFullYear();</span></span><br><span class="line"><span class="regexp">            var month = date.getMonth() + 1;</span></span><br><span class="line"><span class="regexp">            var dates = date.getDate();</span></span><br><span class="line"><span class="regexp">            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];</span></span><br><span class="line"><span class="regexp">            var day = date.getDay();</span></span><br><span class="line"><span class="regexp">            return '今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day];</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>innerText和innerHTML的区别</strong></p>
+<ul>
+<li><p>获取内容时的区别：</p>
+<p>​innerText会去除空格和换行，而innerHTML会保留空格和换行    </p>
+</li>
+<li><p>设置内容时的区别：</p>
+<p>​innerText不会识别html，而innerHTML会识别</p>
+</li>
+</ul>
+<p><strong>案例代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        我是文字</span><br><span class="line">        &lt;span&gt;<span class="number">123</span>&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>p&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="comment">// innerText 和 innerHTML的区别 </span></span><br><span class="line">        <span class="comment">// 1. innerText 不识别html标签 非标准  去除空格和换行</span></span><br><span class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>);</span><br><span class="line">        <span class="comment">// div.innerText = '&lt;strong&gt;今天是：&lt;/strong&gt; 2019';</span></span><br><span class="line">        <span class="comment">// 2. innerHTML 识别html标签 W3C标准 保留空格和换行的</span></span><br><span class="line">        div.innerHTML = <span class="string">'&lt;strong&gt;今天是：&lt;/strong&gt; 2019'</span>;</span><br><span class="line">        <span class="comment">// 这两个属性是可读写的  可以获取元素里面的内容</span></span><br><span class="line">        <span class="keyword">var</span> p = <span class="built_in">document</span>.querySelector(<span class="string">'p'</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(p.innerText);</span><br><span class="line">        <span class="built_in">console</span>.log(p.innerHTML);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-2-常用元素的属性操作"><a href="#1-5-2-常用元素的属性操作" class="headerlink" title="1.5.2. 常用元素的属性操作"></a>1.5.2. 常用元素的属性操作</h4><p><strong>获取元素的值</strong></p>
+<p>元素对象.属性</p>
+<p><strong>设置元素的值</strong></p>
+<p>元素对象.属性=值</p>
+<p><strong>案例代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button id=<span class="string">"ldh"</span>&gt;刘德华&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button id="zxy"&gt;张学友&lt;/</span>button&gt; <span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br><span class="line">    &lt;img src="images/ldh.jpg" alt="" title="刘德华"&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        // 修改元素属性  src</span><br><span class="line">        // 1. 获取元素</span><br><span class="line">        var ldh = document.getElementById('ldh');</span><br><span class="line">        var zxy = document.getElementById('zxy');</span><br><span class="line">        var img = document.querySelector('img');</span><br><span class="line">        // 2. 注册事件  处理程序</span><br><span class="line">        zxy.onclick = function() &#123;</span><br><span class="line">            img.src = 'images/zxy.jpg';</span><br><span class="line">            img.title = '张学友思密达';</span><br><span class="line">        &#125;</span><br><span class="line">        ldh.onclick = function() &#123;</span><br><span class="line">            img.src = 'images/ldh.jpg';</span><br><span class="line">            img.title = '刘德华';</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                
+                
+                <li class="next">
+                    <a href="/2019/04/24/JavaScript-06/">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YulongLin&#39;s Blog 2019
+                    <br>
+                    Theme by <a href="http://beantech.org/">Bean Tech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://www.linyulong.club">YulongLin&#39;s Blog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/script.js"></script>
+
+
+
+
+</body>
+</html>
