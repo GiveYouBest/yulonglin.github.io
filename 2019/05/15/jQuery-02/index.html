@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+<!doctype html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="前端学习">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href>
+
+    
+
+    <title>
+        
+        jQuery-02 |
+        
+        YulongLin&#39;s Blog
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Custom CSS -->
+    <!-- ↓这是stylus文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/toc.css">
+
+
+</head>
+<body></body>
+</html>
+
+<body>
+
+<!-- Header -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+     background-image: url('');
+        /*post*/
+    
+    }
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 文章 -->
+                
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#jQuery" title="jQuery">jQuery</a>
+                        
+                    </div>
+                    <h1>jQuery-02</h1>
+                    <h2 class="subheading">jQuery</h2>
+                    <span class="meta">
+                            Posted by yulonglin on
+                        2019-05-15
+                        </span>
+                </div>
+                <!-- 非文章 -->
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Nav -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">YulongLin&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/Portfolio.html">Portfolio</a></li>
+                    
+                    <li><a href="/About.html">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Content -->
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <h2 id="1-jQuery属性操作"><a href="#1-jQuery属性操作" class="headerlink" title="1 jQuery属性操作"></a>1 jQuery属性操作</h2><h3 id="1-1-元素固有属性prop"><a href="#1-1-元素固有属性prop" class="headerlink" title="1.1 元素固有属性prop()"></a>1.1 元素固有属性prop()</h3><p>元素的固有属性就是元素本身自带 的属性，比如<a>元素中的href属性，比如<input>下的type</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取属性语法</span></span><br><span class="line">prop(<span class="string">"属性"</span>);</span><br><span class="line"><span class="comment">//设置属性语法</span></span><br><span class="line">prop(<span class="string">"属性"</span>,<span class="string">"属性值"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-元素自定义属性值-attr"><a href="#1-2-元素自定义属性值-attr" class="headerlink" title="1.2 元素自定义属性值 attr()"></a>1.2 元素自定义属性值 attr()</h3><p>用户自己给元素添加的属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取属性语法</span></span><br><span class="line">attr(<span class="string">"属性"</span>);   <span class="comment">//类似原生getAttribute()</span></span><br><span class="line"><span class="comment">//设置属性语法</span></span><br><span class="line">attr(<span class="string">"属性"</span>,<span class="string">"属性值"</span>); <span class="comment">//类似原生setAttribute()</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3-数据缓存data"><a href="#1-3-数据缓存data" class="headerlink" title="1.3 数据缓存data()"></a>1.3 数据缓存data()</h3><p>data()方法可以在指定的元素上存取数据，并不会修改DOM元素结构。一旦页面刷新，之前存放的数据都将被移出。</p>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//附加数据语法</span></span><br><span class="line">data(<span class="string">"name"</span>,<span class="string">"value"</span>);  <span class="comment">//向被选元素附加数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取数据语法</span></span><br><span class="line">data(<span class="string">"name"</span>); <span class="comment">//向被元素获取数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//还可以读取html5自定义属性data-index，得到的是数字型。</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-jQuery文本属性值"><a href="#2-jQuery文本属性值" class="headerlink" title="2 jQuery文本属性值"></a>2 jQuery文本属性值</h2><h3 id="2-1-jQuery内容文本值"><a href="#2-1-jQuery内容文本值" class="headerlink" title="2.1 jQuery内容文本值"></a>2.1 jQuery内容文本值</h3><p>​    常见操作有三种:html()/text()/val();分别对应JavaScript中的innerHTML\innerText和value()属性，主要针对元素的内容还有表单的值操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.普通元素内容html()(相当于原生innerHtml)</span></span><br><span class="line">html(); <span class="comment">//获取元素的内容</span></span><br><span class="line">html(<span class="string">"内容"</span>); <span class="comment">//设置元素的内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.普通元素文本内容text()(相当于原生innerText)</span></span><br><span class="line">text(); <span class="comment">//获取元素的内容</span></span><br><span class="line">text(<span class="string">"文本内容"</span>); <span class="comment">//设置元素的文本内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.表单的值val()(相当于原生value)</span></span><br><span class="line">val();  <span class="comment">//获取元素的内容</span></span><br><span class="line">val(<span class="string">"内容"</span>); <span class="comment">//设置元素的文本内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//html()可识别标签    text()不可识别标签</span></span><br></pre></td></tr></table></figure>
+<p><strong>演示代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;span&gt;我是内容&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> value=<span class="string">"请输入内容"</span>&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="comment">// 1. 获取设置元素内容 html()</span></span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="string">"div"</span>).html());</span><br><span class="line">        <span class="comment">// $("div").html("123");</span></span><br><span class="line">        <span class="comment">// 2. 获取设置元素文本内容 text()</span></span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="string">"div"</span>).text());</span><br><span class="line">        $(<span class="string">"div"</span>).text(<span class="string">"123"</span>);</span><br><span class="line">        <span class="comment">// 3. 获取设置表单值 val()</span></span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="string">"input"</span>).val());</span><br><span class="line">        $(<span class="string">"input"</span>).val(<span class="string">"123"</span>);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-jQuery-元素操作"><a href="#3-jQuery-元素操作" class="headerlink" title="3 jQuery 元素操作"></a>3 jQuery 元素操作</h2><p>​    jQuery元素操作主要讲的是用jQuery方法，操作标签的便利、创建、添加、删除等操作。</p>
+<h3 id="3-1-遍历元素"><a href="#3-1-遍历元素" class="headerlink" title="3.1 遍历元素"></a>3.1 遍历元素</h3><p>​    jQuery隐式迭代是对同一类元素做了同样的操作。如果想要给同一类做不同的操作，就需要用到遍历。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一</span></span><br><span class="line">$(<span class="string">"div"</span>).each(functiong(index,domEle)&#123;ffff;&#125;)</span><br><span class="line"><span class="comment">//1.each()方法遍历匹配的每一个元素。主要用DOM处理。each每一个里面的回调函数有两个参数:index是每个元素的索引号；domEle是每一个DOM元素对象</span></span><br><span class="line"><span class="comment">//想要使用必须个这个dom元素 转换为jQuery对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方式二</span></span><br><span class="line">$.each(object,<span class="function"><span class="keyword">function</span>(<span class="params">index,element</span>)</span>&#123;ll;&#125;)</span><br><span class="line"><span class="comment">//1.$.each()方法可用于遍历任何对象。主要用于数据处理，比如数组，对象</span></span><br><span class="line"><span class="comment">//2.里面的函数有2个参数：index是每个元素的索引号，element遍历内容</span></span><br></pre></td></tr></table></figure>
+<p>实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">  &lt;body&gt;</span></span><br><span class="line"><span class="regexp">  &lt;div&gt;1&lt;/</span>div&gt;</span><br><span class="line">  &lt;div&gt;<span class="number">2</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;div&gt;3&lt;/</span>div&gt;</span><br><span class="line">  	&lt;script&gt;</span><br><span class="line">  		$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    	<span class="keyword">var</span> sum=<span class="number">0</span>;</span><br><span class="line">  		<span class="keyword">var</span> arr=[<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"blue"</span>];</span><br><span class="line">  		<span class="comment">//1.each()方法遍历兑现</span></span><br><span class="line">  		$(<span class="string">"div"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">i,domEle</span>)</span>&#123;</span><br><span class="line">          <span class="comment">//回调函数第一个函数一定是索引号，可以随意起名字</span></span><br><span class="line">          <span class="built_in">console</span>.log(i);</span><br><span class="line">          <span class="comment">//回调函数第二个一定是dom元素对象，也是自己命名的</span></span><br><span class="line">          <span class="built_in">console</span>.log(domEle);</span><br><span class="line">          $(domEle).css(<span class="string">"color"</span>,arr[i]);</span><br><span class="line">          sum+=<span class="built_in">parseInt</span>($(domEle).text());</span><br><span class="line">        &#125;);</span><br><span class="line">  		<span class="built_in">console</span>.log(sum);</span><br><span class="line">	&#125;);</span><br><span class="line">  	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-jQuery-尺寸、位置操作"><a href="#4-jQuery-尺寸、位置操作" class="headerlink" title="4 jQuery 尺寸、位置操作"></a>4 jQuery 尺寸、位置操作</h2><h3 id="4-1-jQuery尺寸操作"><a href="#4-1-jQuery尺寸操作" class="headerlink" title="4.1 jQuery尺寸操作"></a>4.1 jQuery尺寸操作</h3><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width()/height()</td>
+<td>取得匹配元素宽度和高度值只算width/height</td>
+</tr>
+<tr>
+<td>innerWidth()/innerHight()</td>
+<td>取得匹配元素宽度和高度值包含padding</td>
+</tr>
+<tr>
+<td>outerWidth()/outerHeight()</td>
+<td>取得匹配元素宽度和高度值包含padding、border</td>
+</tr>
+<tr>
+<td>outerWidth(true)/outerHeight(true)</td>
+<td>取得匹配元素宽度和高度值包含padding、border、margin</td>
+</tr>
+</tbody>
+</table>
+<p><strong>代码演示</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 1. width() / height() 获取设置元素 width和height大小 </span></span><br><span class="line">            <span class="built_in">console</span>.log($(<span class="string">"div"</span>).width());</span><br><span class="line">            <span class="comment">// $("div").width(300);</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 2. innerWidth() / innerHeight()  获取设置元素 width和height + padding 大小 </span></span><br><span class="line">            <span class="built_in">console</span>.log($(<span class="string">"div"</span>).innerWidth());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 3. outerWidth()  / outerHeight()  获取设置元素 width和height + padding + border 大小 </span></span><br><span class="line">            <span class="built_in">console</span>.log($(<span class="string">"div"</span>).outerWidth());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 4. outerWidth(true) / outerHeight(true) 获取设置 width和height + padding + border + margin</span></span><br><span class="line">            <span class="built_in">console</span>.log($(<span class="string">"div"</span>).outerWidth(<span class="literal">true</span>));</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-jQuery位置操作"><a href="#4-2-jQuery位置操作" class="headerlink" title="4.2 jQuery位置操作"></a>4.2 jQuery位置操作</h3><p>​    jQuery的位置操作主要有 三个:offset()、position()、scrollTop()/scrollLeft()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"father"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"son"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        </span></span><br><span class="line"><span class="regexp">    &lt;div class="back"&gt;返回顶部&lt;/</span>div&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">   </span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 1. 获取设置距离文档的位置（偏移） offset</span></span><br><span class="line">            <span class="built_in">console</span>.log($(<span class="string">".son"</span>).offset());</span><br><span class="line">            <span class="built_in">console</span>.log($(<span class="string">".son"</span>).offset().top);</span><br><span class="line">            <span class="comment">// $(".son").offset(&#123;</span></span><br><span class="line">            <span class="comment">//     top: 200,</span></span><br><span class="line">            <span class="comment">//     left: 200</span></span><br><span class="line">            <span class="comment">// &#125;);</span></span><br><span class="line">      </span><br><span class="line">            <span class="comment">// 2. 获取距离带有定位父级位置（偏移） position   如果没有带有定位的父级，则以文档为准</span></span><br><span class="line">            <span class="comment">// 这个方法只能获取不能设置偏移</span></span><br><span class="line">            <span class="built_in">console</span>.log($(<span class="string">".son"</span>).position());</span><br><span class="line">            <span class="comment">// $(".son").position(&#123;</span></span><br><span class="line">            <span class="comment">//     top: 200,</span></span><br><span class="line">            <span class="comment">//     left: 200</span></span><br><span class="line">            <span class="comment">// &#125;);</span></span><br><span class="line">      </span><br><span class="line">      		<span class="comment">// 3. 被卷去的头部</span></span><br><span class="line">      		$(<span class="built_in">document</span>).scrollTop(<span class="number">100</span>);</span><br><span class="line">            <span class="comment">// 被卷去的头部 scrollTop()  / 被卷去的左侧 scrollLeft()</span></span><br><span class="line">            <span class="comment">// 页面滚动事件</span></span><br><span class="line">            <span class="keyword">var</span> boxTop = $(<span class="string">".container"</span>).offset().top;</span><br><span class="line">            $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">// console.log(11);</span></span><br><span class="line">                <span class="built_in">console</span>.log($(<span class="built_in">document</span>).scrollTop());</span><br><span class="line">                <span class="keyword">if</span> ($(<span class="built_in">document</span>).scrollTop() &gt;= boxTop) &#123;</span><br><span class="line">                    $(<span class="string">".back"</span>).fadeIn();</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    $(<span class="string">".back"</span>).fadeOut();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// 返回顶部</span></span><br><span class="line">            $(<span class="string">".back"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">// $(document).scrollTop(0);</span></span><br><span class="line">                $(<span class="string">"body, html"</span>).stop().animate(&#123;</span><br><span class="line">                    scrollTop: <span class="number">0</span></span><br><span class="line">                &#125;);</span><br><span class="line">                <span class="comment">// $(document).stop().animate(&#123;</span></span><br><span class="line">                <span class="comment">//     scrollTop: 0</span></span><br><span class="line">                <span class="comment">// &#125;); 不能是文档而是 html和body元素做动画</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                
+                <li class="previous">
+                    <a href="/2019/05/15/jQuery-01/">&larr; Previous Post</a>
+                </li>
+                
+                
+                <li class="next">
+                    <a href="/2019/05/14/正则表达式/">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YulongLin&#39;s Blog 2019
+                    <br>
+                    Theme by <a href="http://beantech.org/">Bean Tech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://www.linyulong.club">YulongLin&#39;s Blog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/script.js"></script>
+
+
+
+
+</body>
+</html>
