@@ -1,4 +1,18 @@
 /*------------------------home------------------------*/
+
+body {
+    /*background: #F3F6F7;*/
+    /*margin: 0;*/
+    padding: 0;
+    margin-left: -100px!important;
+    background: url(../upload/bg.png);
+    background-position: left top;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
 .post-preview {
     margin-top: 30px;
     border-radius: 2px;
@@ -41,7 +55,6 @@
     margin-bottom: 15px;
     border-radius: 50%;
 }
-
 
 .post-content-container {
     flex: 1;
