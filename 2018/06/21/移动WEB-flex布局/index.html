@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+<!doctype html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="前端学习">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href>
+
+    
+
+    <title>
+        
+        移动WEB_flex布局 |
+        
+        YulongLin&#39;s Blog
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Custom CSS -->
+    <!-- ↓这是stylus文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/toc.css">
+
+
+</head>
+<body></body>
+</html>
+
+<body>
+
+<!-- Header -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+     background-image: url('');
+        /*post*/
+    
+    }
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 文章 -->
+                
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#flex" title="flex">flex</a>
+                        
+                    </div>
+                    <h1>移动WEB_flex布局</h1>
+                    <h2 class="subheading">移动WEB布局</h2>
+                    <span class="meta">
+                            Posted by yulonglin on
+                        2018-06-21
+                        </span>
+                </div>
+                <!-- 非文章 -->
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Nav -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">YulongLin&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/Portfolio.html">Portfolio</a></li>
+                    
+                    <li><a href="/About.html">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Content -->
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <h3 id="1-1传统布局和flex布局对比"><a href="#1-1传统布局和flex布局对比" class="headerlink" title="1.1传统布局和flex布局对比"></a>1.1传统布局和flex布局对比</h3><h4 id="1-1-1传统布局"><a href="#1-1-1传统布局" class="headerlink" title="1.1.1传统布局"></a>1.1.1传统布局</h4><ul>
+<li>兼容性好</li>
+<li>布局繁琐</li>
+<li>局限性，不能再移动端很好的布局</li>
+</ul>
+<h4 id="1-1-2-flex布局"><a href="#1-1-2-flex布局" class="headerlink" title="1.1.2 flex布局"></a>1.1.2 flex布局</h4><ul>
+<li>操作方便，布局极其简单，移动端使用比较广泛</li>
+<li>pc端浏览器支持情况比较差</li>
+<li>IE11或更低版本不支持flex或仅支持部分</li>
+</ul>
+<h4 id="1-1-3-建议"><a href="#1-1-3-建议" class="headerlink" title="1.1.3 建议"></a>1.1.3 建议</h4><ul>
+<li>如果是pc端页面布局，还是采用传统方式</li>
+<li>如果是移动端或者是不考虑兼容的pc则采用flex</li>
+</ul>
+<h3 id="1-2flex布局原理"><a href="#1-2flex布局原理" class="headerlink" title="1.2flex布局原理"></a>1.2flex布局原理</h3><p>通过父盒子添加flex属性，来控制盒子的位置和排列方式</p>
+<h3 id="1-3父项常见属性"><a href="#1-3父项常见属性" class="headerlink" title="1.3父项常见属性"></a>1.3父项常见属性</h3><p>flex-direction:设置主轴方向row(从左到右) 或者column(从上到下) </p>
+<p>justify-content:设置主轴子元素排列方式 </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">flex-start</th>
+<th style="text-align:center">默认值从头部开始 若主轴是X，从左到右</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">flex-end</td>
+<td style="text-align:center">反之</td>
+</tr>
+<tr>
+<td style="text-align:center">center</td>
+<td style="text-align:center">居中</td>
+</tr>
+<tr>
+<td style="text-align:center">space-around</td>
+<td style="text-align:center">评分剩余空间</td>
+</tr>
+<tr>
+<td style="text-align:center">sapce-between</td>
+<td style="text-align:center">先两边贴边在评分剩余空间</td>
+</tr>
+</tbody>
+</table>
+<p>flex-wrap:设置子元素是否换行</p>
+<ul>
+<li>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，flex布局中默认是不换行的。</li>
+<li>nowrap 不换行</li>
+<li>wrap 换行</li>
+</ul>
+<p>align-content:设置侧轴上的子元素的排列方式(多行)</p>
+<ul>
+<li>flex-start 从侧轴的头部开始排列</li>
+<li>flex-end 从侧轴的尾部开始</li>
+<li>center 子项在侧轴中间显示</li>
+<li>space-around 子项在侧轴评分剩余空间</li>
+<li>space-between 子项在侧轴先评分在两头，在评分剩余空间</li>
+<li>stretch 设置子项元素高度平分父元素高度</li>
+</ul>
+<p>align-items:设置侧轴上的子元素排列方式(单行)</p>
+<ul>
+<li>该属性是控制子项在侧轴（默认是y轴）上的排列方式  在子项为单项（单行）的时候使用</li>
+<li>flex-start 从头部开始</li>
+<li>flex-end 从尾部开始</li>
+<li>center 居中显示</li>
+<li>stretch 拉伸</li>
+</ul>
+<p>flex-flow:复合属性，相当于同时设置了flex-direction和flex-wrap</p>
+<h3 id="1-4align-content和align-items区别"><a href="#1-4align-content和align-items区别" class="headerlink" title="1.4align-content和align-items区别"></a>1.4align-content和align-items区别</h3><p>align-items 适用于单行，只有上对齐、下对齐、居中和拉伸</p>
+<p>algin-centent 适用于多行情况下（<strong>单行情况下为无效</strong>），以设置 上对齐、下对齐、居中、拉伸以及平均分配剩余空间等属性值。 </p>
+
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                
+                <li class="previous">
+                    <a href="/2018/06/21/移动WEB-rem-less布局/">&larr; Previous Post</a>
+                </li>
+                
+                
+                <li class="next">
+                    <a href="/2018/05/14/正则表达式/">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YulongLin&#39;s Blog 2019
+                    <br>
+                    Theme by <a href="http://beantech.org/">Bean Tech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://www.linyulong.club">YulongLin&#39;s Blog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/script.js"></script>
+
+
+
+
+</body>
+</html>

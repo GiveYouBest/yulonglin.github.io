@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+<!doctype html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="前端学习">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href>
+
+    
+
+    <title>
+        
+        Web-API-02 |
+        
+        YulongLin&#39;s Blog
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Custom CSS -->
+    <!-- ↓这是stylus文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/toc.css">
+
+
+</head>
+<body></body>
+</html>
+
+<body>
+
+<!-- Header -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+     background-image: url('');
+        /*post*/
+    
+    }
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 文章 -->
+                
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#DOM" title="DOM">DOM</a>
+                        
+                    </div>
+                    <h1>Web-API-02</h1>
+                    <h2 class="subheading">Web API</h2>
+                    <span class="meta">
+                            Posted by yulonglin on
+                        2018-05-12
+                        </span>
+                </div>
+                <!-- 非文章 -->
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Nav -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">YulongLin&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/Portfolio.html">Portfolio</a></li>
+                    
+                    <li><a href="/About.html">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Content -->
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <h2 id="1-排他操作"><a href="#1-排他操作" class="headerlink" title="1.排他操作"></a>1.排他操作</h2><h3 id="1-1-排他思想"><a href="#1-1-排他思想" class="headerlink" title="1.1 排他思想"></a>1.1 排他思想</h3><p>思路：</p>
+<p>如果有同一组元素，我们想要某一个元素实现某种样式，需要到循环排他思想：</p>
+<p>​     1.所有元素全部清除样式(干掉其他人)</p>
+<p>​     2.给当前元素设置样式(留下我自己)</p>
+<p>​     3.注意顺序不能颠倒，首先干掉其他人，再设置自己。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    &lt;button&gt;按钮<span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button&gt;按钮2&lt;/</span>button&gt;</span><br><span class="line">    &lt;button&gt;按钮<span class="number">3</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button&gt;按钮4&lt;/</span>button&gt;</span><br><span class="line">    &lt;button&gt;按钮<span class="number">5</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">   	/</span><span class="regexp">/获取所有的按钮</span></span><br><span class="line"><span class="regexp">      var btns=document.getElementsByTagName('button');</span></span><br><span class="line"><span class="regexp">	/</span><span class="regexp">/btns得到的是伪数组 里面的每一个元素btn[i]</span></span><br><span class="line"><span class="regexp">	for(var i=0;i&lt;btns.length;i++)</span></span><br><span class="line"><span class="regexp">         &#123;</span></span><br><span class="line"><span class="regexp">             btns[i].onclick=function()&#123;</span></span><br><span class="line"><span class="regexp">                 /</span><span class="regexp">/首先把所有的按钮的背景颜色去掉</span></span><br><span class="line"><span class="regexp">                for(var i=0;i&lt;btns.length;i++)</span></span><br><span class="line"><span class="regexp">                  &#123;</span></span><br><span class="line"><span class="regexp">                      btns[i].style.backgroundColor='';</span></span><br><span class="line"><span class="regexp">                  &#125;</span></span><br><span class="line"><span class="regexp">               /</span><span class="regexp">/然后给当前的元素背景颜色为pink留下自己</span></span><br><span class="line"><span class="regexp">               this.style.backgroundColor='pink';</span></span><br><span class="line"><span class="regexp">             &#125;</span></span><br><span class="line"><span class="regexp">         &#125;</span></span><br><span class="line"><span class="regexp">   &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2自定义属性操作"><a href="#1-2自定义属性操作" class="headerlink" title="1.2自定义属性操作"></a>1.2自定义属性操作</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//element.属性  获取属性值</span></span><br><span class="line"><span class="comment">//element.getAttribute('属性');</span></span><br><span class="line"></span><br><span class="line">  &lt;div id=<span class="string">"demo"</span> index=<span class="string">"1"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"nav"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>);</span><br><span class="line">        <span class="comment">// 1. 获取元素的属性值</span></span><br><span class="line">        <span class="comment">// (1) element.属性</span></span><br><span class="line">        <span class="built_in">console</span>.log(div.id);</span><br><span class="line">        <span class="comment">//(2) element.getAttribute('属性')  get得到获取 attribute 属性的意思 我们程序员自己添加的属性我们称为自定义属性 index</span></span><br><span class="line">        <span class="built_in">console</span>.log(div.getAttribute(<span class="string">'id'</span>));</span><br><span class="line">        <span class="built_in">console</span>.log(div.getAttribute(<span class="string">'index'</span>));</span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3-设置-移出属性"><a href="#1-3-设置-移出属性" class="headerlink" title="1.3 设置/移出属性"></a>1.3 设置/移出属性</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//element.属性='值'  设置内置属性值</span></span><br><span class="line"><span class="comment">//element.setAttribute('属性'，'值');</span></span><br><span class="line"><span class="comment">//element.removeAttribute('属性');</span></span><br><span class="line">-------------------------------------区别--------------------------------------------</span><br><span class="line"><span class="comment">//element.属性   设置内置属性值</span></span><br><span class="line"><span class="comment">//element.setAttribute('属性'); 主要设置自定义的属性(标准)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. 设置元素属性值</span></span><br><span class="line">        <span class="comment">// (1) element.属性= '值'</span></span><br><span class="line">        div.id = <span class="string">'test'</span>;</span><br><span class="line">        div.className = <span class="string">'navs'</span>;</span><br><span class="line">        <span class="comment">// (2) element.setAttribute('属性', '值');  主要针对于自定义属性</span></span><br><span class="line">        div.setAttribute(<span class="string">'index'</span>, <span class="number">2</span>);</span><br><span class="line">        div.setAttribute(<span class="string">'class'</span>, <span class="string">'footer'</span>); <span class="comment">// class 特殊  这里面写的就是</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// class 不是className</span></span><br><span class="line">        <span class="comment">// 3 移除属性 removeAttribute(属性)    </span></span><br><span class="line">        div.removeAttribute(<span class="string">'index'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="2-0-节点操作"><a href="#2-0-节点操作" class="headerlink" title="2.0 节点操作"></a>2.0 节点操作</h2><h3 id="2-1删除节点"><a href="#2-1删除节点" class="headerlink" title="2.1删除节点"></a>2.1删除节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//node.removeChild(child)</span></span><br><span class="line"></span><br><span class="line">node.removeChild()方法从node节点中删除一个子节点，返回删除的节点。</span><br><span class="line"></span><br><span class="line">  &lt;button&gt;删除&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;熊大&lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;熊二&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;光头强&lt;/</span>li&gt;</span><br><span class="line">    &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 1.获取元素</span></span><br><span class="line"><span class="regexp">        var ul = document.querySelector('ul');</span></span><br><span class="line"><span class="regexp">        var btn = document.querySelector('button');</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 2. 删除元素  node.removeChild(child)</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ ul.removeChild(ul.children[0]);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 3. 点击按钮依次删除里面的孩子</span></span><br><span class="line"><span class="regexp">        btn.onclick = function() &#123;</span></span><br><span class="line"><span class="regexp">            if (ul.children.length == 0) &#123;</span></span><br><span class="line"><span class="regexp">                this.disabled = true;</span></span><br><span class="line"><span class="regexp">            &#125; else &#123;</span></span><br><span class="line"><span class="regexp">                ul.removeChild(ul.children[0]);</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2复制-克隆-节点"><a href="#2-2复制-克隆-节点" class="headerlink" title="2.2复制(克隆)节点"></a>2.2复制(克隆)节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">node.cloneNode()方法返回调用改方法的节点的一个副本。也称为克隆节点/拷贝节点</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">        &lt;li&gt;<span class="number">1111</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;2&lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;<span class="number">3</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">'ul'</span>);</span><br><span class="line">        <span class="comment">// 1. node.cloneNode(); 括号为空或者里面是false 浅拷贝 只复制标签不复制里面的内容</span></span><br><span class="line">        <span class="comment">// 2. node.cloneNode(true); 括号为true 深拷贝 复制标签复制里面的内容</span></span><br><span class="line">        <span class="keyword">var</span> lili = ul.children[<span class="number">0</span>].cloneNode(<span class="literal">true</span>);</span><br><span class="line">        ul.appendChild(lili);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-创建元素的三种方式"><a href="#2-3-创建元素的三种方式" class="headerlink" title="2.3 创建元素的三种方式"></a>2.3 创建元素的三种方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()</span><br><span class="line">element.innerHTML</span><br><span class="line"><span class="built_in">document</span>.createElement()</span><br><span class="line">-----------区别----------</span><br><span class="line"><span class="number">1.</span><span class="built_in">document</span>.write 是直接将内容写入页面的内容流，但是文档流执行完毕</span><br><span class="line">，则它会导致页面重绘</span><br><span class="line"><span class="number">2.</span>innerHTML是将内容写入某个DOM节点，不会导致页面全部重绘</span><br><span class="line"><span class="number">3.</span>innerHTML创建多个元素效率更高</span><br><span class="line"><span class="number">4.</span>createElement()创建多个元素效率稍低一点点，但是结构更清晰</span><br><span class="line">不同浏览器下，innerHTML效率要比createElement高</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        <span class="comment">// 三种创建元素方式区别 </span></span><br><span class="line">        <span class="comment">// 1. document.write() 创建元素  如果页面文档流加载完毕，再调用这句话会导致页面重绘</span></span><br><span class="line">         <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span><br><span class="line">         btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">             <span class="built_in">document</span>.write(<span class="string">'&lt;div&gt;123&lt;/div&gt;'</span>);</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. innerHTML 创建元素</span></span><br><span class="line">        <span class="keyword">var</span> inner = <span class="built_in">document</span>.querySelector(<span class="string">'.inner'</span>);</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">             inner.innerHTML += <span class="string">'&lt;a href="#"&gt;百度&lt;/a&gt;'</span></span><br><span class="line">         &#125;</span><br><span class="line">        <span class="keyword">var</span> arr = [];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">            arr.push(<span class="string">'&lt;a href="#"&gt;百度&lt;/a&gt;'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        inner.innerHTML = arr.join(<span class="string">''</span>);</span><br><span class="line">        <span class="comment">// 3. document.createElement() 创建元素</span></span><br><span class="line">        <span class="keyword">var</span> create = <span class="built_in">document</span>.querySelector(<span class="string">'.create'</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">            create.appendChild(a);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-0-DOM的核心总结"><a href="#3-0-DOM的核心总结" class="headerlink" title="3.0 DOM的核心总结"></a>3.0 DOM的核心总结</h2><h3 id="3-1-创建"><a href="#3-1-创建" class="headerlink" title="3.1 创建"></a>3.1 创建</h3><p>​    1.document.write</p>
+<p>​    2.innerHTML</p>
+<p>​    3.createElement</p>
+<h3 id="3-2-增加"><a href="#3-2-增加" class="headerlink" title="3.2 增加"></a>3.2 增加</h3><p>​    1.appendChild</p>
+<p>​    2.insertBefore</p>
+<h3 id="3-3-删"><a href="#3-3-删" class="headerlink" title="3.3 删"></a>3.3 删</h3><p>​    1.removeChild</p>
+<h3 id="3-4-改"><a href="#3-4-改" class="headerlink" title="3.4 改"></a>3.4 改</h3><p>​    主要获取查询dom的元素</p>
+<p>​    1.DOM提供的API方法:getElementById、getElementsByTagName、</p>
+<p>​    2.H5提供的新方法:querySelector、querySelectorAll</p>
+<p>​    3.利用节点操作获取元素：父(parentNode)、子(children)、兄(previousElmentSibling</p>
+<p>​    nextElementSibling)</p>
+<h3 id="3-5-属性操作"><a href="#3-5-属性操作" class="headerlink" title="3.5 属性操作"></a>3.5 属性操作</h3><p>​    主要针对自定义属性</p>
+<p>​    1.setAttribute：设置dom的属性值</p>
+<p>​    2.getAttribute：得到dom的属性值</p>
+<p>​    3.removeAttribute：移出属性</p>
+<h2 id="4-事件高级"><a href="#4-事件高级" class="headerlink" title="4 事件高级"></a>4 事件高级</h2><h3 id="4-1注册事件（2种方式）"><a href="#4-1注册事件（2种方式）" class="headerlink" title="4.1注册事件（2种方式）"></a>4.1注册事件（2种方式）</h3><h4 id="4-1-1给事件添加事件"><a href="#4-1-1给事件添加事件" class="headerlink" title="4.1.1给事件添加事件"></a>4.1.1给事件添加事件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">btn.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">'aaa'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-1-2给事件添加监听"><a href="#4-1-2给事件添加监听" class="headerlink" title="4.1.2给事件添加监听"></a>4.1.2给事件添加监听</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">divs[<span class="number">1</span>].addEventListener(<span class="string">'click'</span>, fn) <span class="comment">// 里面的fn 不需要调用加小括号</span></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          alert(<span class="number">22</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                
+                <li class="previous">
+                    <a href="/2018/05/13/Web-API-03/">&larr; Previous Post</a>
+                </li>
+                
+                
+                <li class="next">
+                    <a href="/2018/05/06/Web-API-01/">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YulongLin&#39;s Blog 2019
+                    <br>
+                    Theme by <a href="http://beantech.org/">Bean Tech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://www.linyulong.club">YulongLin&#39;s Blog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/script.js"></script>
+
+
+
+
+</body>
+</html>
