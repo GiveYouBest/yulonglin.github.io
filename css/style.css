@@ -5,6 +5,14 @@ body {
     font-size: 16px;
     color: #404040;
     overflow-x: hidden;
+    padding: 0;
+    margin-left: -100px!important;
+    background: url(./upload/bg.png);
+    background-position: left top;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
 }
 
 ul,
