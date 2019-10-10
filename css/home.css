@@ -5,7 +5,7 @@ body {
     /*margin: 0;*/
     padding: 0;
     margin-left: -100px!important;
-    background: url(../upload/bg.png);
+    background: url(./upload/bg.png);
     background-position: left top;
     -webkit-background-size: auto;
     background-size: auto;
