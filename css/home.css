@@ -1,5 +1,4 @@
 /*------------------------home------------------------*/
-
 .post-preview {
     margin-top: 30px;
     border-radius: 2px;
@@ -42,6 +41,7 @@
     margin-bottom: 15px;
     border-radius: 50%;
 }
+
 
 .post-content-container {
     flex: 1;
