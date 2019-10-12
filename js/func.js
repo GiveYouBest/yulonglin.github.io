@@ -30,3 +30,14 @@ var fnTextPopup = function(arr, options) {
 };
 
 fnTextPopup(['CSS', 'HTML', 'JavaScript', 'jQuery', 'Php', 'Node.js', 'Vue', '法治', '爱国', '敬业', '诚信', '友善']);
+
+var text = document.title
+var timerId
+newtext();
+
+function newtext() {
+    clearTimeout(timerId)
+    document.title = text.substring(1, text.length) + text.substring(0, 1)
+    text = document.title.substring(0, text.length)
+    timerId = setTimeout("newtext()", 500)
+}
