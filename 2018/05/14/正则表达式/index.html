@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+<!doctype html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="前端学习">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href>
+
+    
+
+    <title>
+        
+        正则表达式 |
+        
+        YulongLin&#39;s Blog
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Custom CSS -->
+    <!-- ↓这是stylus文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/toc.css">
+
+
+</head>
+<body></body>
+</html>
+
+<body>
+
+<!-- Header -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+     background-image: url('');
+        /*post*/
+    
+    }
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 文章 -->
+                
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#正则表达式" title="正则表达式">正则表达式</a>
+                        
+                    </div>
+                    <h1>正则表达式</h1>
+                    <h2 class="subheading">正则表达式</h2>
+                    <span class="meta">
+                            Posted by yulonglin on
+                        2018-05-14
+                        </span>
+                </div>
+                <!-- 非文章 -->
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Nav -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">YulongLin&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/Portfolio.html">Portfolio</a></li>
+                    
+                    <li><a href="/About.html">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Content -->
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <h2 id="1-正则表达式的组成"><a href="#1-正则表达式的组成" class="headerlink" title="1 正则表达式的组成"></a>1 正则表达式的组成</h2><p>1.普通字符</p>
+<p>2.特殊字符(元字符):正则表达式中有特殊意义的字符</p>
+<h3 id="1-1元字符串"><a href="#1-1元字符串" class="headerlink" title="1.1元字符串"></a>1.1元字符串</h3><p><strong>常用元字符串</strong></p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td>匹配数字</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母或数字或下划线</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配任意不是字母，数字，下划线</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意的空白符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符以外的任意单一字符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>表示匹配行首的文本(以谁开始)</td>
+</tr>
+<tr>
+<td>$</td>
+<td>表示匹配行尾的文本(以谁结束)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>限定符</strong></p>
+<table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>重复零次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复一次或更多次</td>
+</tr>
+<tr>
+<td>？</td>
+<td>重复零次或一次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或 更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次</td>
+</tr>
+</tbody>
+</table>
+<p><strong>其他</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[] 字符串用中括号括起来，表示匹配其中的任一字符，相当于或的意思</span><br><span class="line">[^]  匹配除中括号以内的内容</span><br><span class="line">\ 转义符</span><br><span class="line">| 或者，选择两者中的一个。注意|将左右两边分为两部分，而不管左右两边有多长多乱</span><br><span class="line">() 从两个直接量中选择一个，分组</span><br><span class="line">   eg：gr(a|e)y匹配gray和grey</span><br><span class="line">[\u4e00-\u9fa5]  匹配汉字</span><br></pre></td></tr></table></figure>
+<h2 id="2-JavaScript-中使用正则表达式"><a href="#2-JavaScript-中使用正则表达式" class="headerlink" title="2 JavaScript 中使用正则表达式"></a>2 JavaScript 中使用正则表达式</h2><p><strong>创建正则对象</strong></p>
+<p>方式一</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg=<span class="keyword">new</span> Regex(<span class="string">'\d'</span>,<span class="string">'i'</span>);</span><br><span class="line"><span class="keyword">var</span> reg=<span class="keyword">new</span> Regex(<span class="string">'\d'</span>,<span class="string">'gi'</span>);</span><br></pre></td></tr></table></figure>
+<p>方式二</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/\d/i</span>;</span><br><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/\d/gi</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>标志</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>忽略大小写</td>
+</tr>
+<tr>
+<td>g</td>
+<td>全局匹配</td>
+</tr>
+<tr>
+<td>gi</td>
+<td>全局匹配+忽略大小写</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-1正则匹配"><a href="#2-1正则匹配" class="headerlink" title="2.1正则匹配"></a>2.1正则匹配</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配日期</span></span><br><span class="line"><span class="keyword">var</span> dateStr = <span class="string">'2015-10-10'</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;$/</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(dateStr));</span><br></pre></td></tr></table></figure>
+<h3 id="2-2正则提取"><a href="#2-2正则提取" class="headerlink" title="2.2正则提取"></a>2.2正则提取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 提取工资</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"张三：1000，李四：5000，王五：8000。"</span>;</span><br><span class="line"><span class="keyword">var</span> array = str.match(<span class="regexp">/\d+/g</span>);</span><br><span class="line"><span class="built_in">console</span>.log(array);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 提取email地址</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123123@xx.com,fangfang@valuedopinions.cn 286669312@qq.com 2、emailenglish@emailenglish.englishtown.com 286669312@qq.com..."</span>;</span><br><span class="line"><span class="keyword">var</span> array = str.match(<span class="regexp">/\w+@\w+\.\w+(\.\w+)?/g</span>);</span><br><span class="line"><span class="built_in">console</span>.log(array);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 分组提取  </span></span><br><span class="line"><span class="comment">// 3. 提取日期中的年部分  2015-5-10</span></span><br><span class="line"><span class="keyword">var</span> dateStr = <span class="string">'2016-1-5'</span>;</span><br><span class="line"><span class="comment">// 正则表达式中的()作为分组来使用，获取分组匹配到的结果用Regex.$1 $2 $3....来获取</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d&#123;4&#125;)-\d&#123;1,2&#125;-\d&#123;1,2&#125;/</span>;</span><br><span class="line"><span class="keyword">if</span> (reg.test(dateStr)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 提取邮件中的每一部分</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w+)@(\w+)\.(\w+)(\.\w+)?/</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123123@xx.com"</span>;</span><br><span class="line"><span class="keyword">if</span> (reg.test(str)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">2</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3正则替换"><a href="#2-3正则替换" class="headerlink" title="2.3正则替换"></a>2.3正则替换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 替换所有空白</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"   123AD  asadf   asadfasf  adf "</span>;</span><br><span class="line">str = str.replace(<span class="regexp">/\s/g</span>,<span class="string">"xx"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 替换所有,|，</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"abc,efg,123，abc,123，a"</span>;</span><br><span class="line">str = str.replace(<span class="regexp">/,|，/g</span>, <span class="string">"."</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
+
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                
+                <li class="previous">
+                    <a href="/2018/06/21/移动WEB-flex布局/">&larr; Previous Post</a>
+                </li>
+                
+                
+                <li class="next">
+                    <a href="/2018/05/13/Web-API-03/">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YulongLin&#39;s Blog 2019
+                    <br>
+                    Theme by <a href="http://beantech.org/">Bean Tech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://www.linyulong.club">YulongLin&#39;s Blog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/script.js"></script>
+
+
+
+
+</body>
+</html>

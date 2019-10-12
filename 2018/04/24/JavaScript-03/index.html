@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+<!doctype html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="前端学习">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href>
+
+    
+
+    <title>
+        
+        JavaScript-03 |
+        
+        YulongLin&#39;s Blog
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Custom CSS -->
+    <!-- ↓这是stylus文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/toc.css">
+
+
+</head>
+<body></body>
+</html>
+
+<body>
+
+<!-- Header -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+     background-image: url('');
+        /*post*/
+    
+    }
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 文章 -->
+                
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#循环" title="循环">循环</a>
+                        
+                    </div>
+                    <h1>JavaScript-03</h1>
+                    <h2 class="subheading">JavaSccript</h2>
+                    <span class="meta">
+                            Posted by yulonglin on
+                        2018-04-24
+                        </span>
+                </div>
+                <!-- 非文章 -->
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Nav -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">YulongLin&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/Portfolio.html">Portfolio</a></li>
+                    
+                    <li><a href="/About.html">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Content -->
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <h2 id="1-循环"><a href="#1-循环" class="headerlink" title="1.循环"></a>1.循环</h2><h3 id="1-1-for循环"><a href="#1-1-for循环" class="headerlink" title="1.1 for循环"></a>1.1 for循环</h3><p>语法结构</p>
+<p>for循环主要用于把某些代码循环若干次，通常跟计数有关系。其语法结构如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(初始变量;条件表达式;操作表达式)&#123;</span><br><span class="line">  //循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始化变量</td>
+<td>通常被 用于初始化一个计数器，该表达式可以使用var关键字声明新的变量<br>这个变量用来记录次数</td>
+</tr>
+<tr>
+<td>条件表达式</td>
+<td>用于确定每一次循环是否能否被执行。若为true则执行反之退出循环</td>
+</tr>
+<tr>
+<td>操作表达式</td>
+<td>用于确定每一次循环是否能够被执行。若为true则执行反之退出循环</td>
+</tr>
+</tbody>
+</table>
+<p>执行过程:</p>
+<p>​    1.初始化变量，初始化操作在整个for循环只会执行一次</p>
+<p>​    2.执行条件表达式，若为true继续执行循环语句，反之退出循环，循环结束</p>
+<p>​    3.执行操作表达式，此时第一轮循环结束。</p>
+<p>​    4.第二轮开始，直接执行变量表达式，若为true，则去执行循环体语句，否则退出循环。</p>
+<p>​    5.继续执行操作表达式，第二轮结束</p>
+<p>​    6.跟第二轮一样，知道条件为false</p>
+<p>断点调试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">浏览器中按F12--&gt;sources--&gt;找打要调试的文件--&gt;在程序的某一行设置断点</span><br><span class="line">F11单步执行</span><br></pre></td></tr></table></figure>
+<p>for循环 重复相同的代码</p>
+<p>for循环 可以重复相同的代码，比如输出10局‘hello’</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本写法</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//用户输入次数</span></span><br><span class="line"><span class="keyword">var</span> num=prompt(<span class="string">'请输入次数:'</span>);</span><br><span class="line">num=<span class="built_in">parseInt</span>(num);      <span class="comment">//将输入的转为整数</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num;i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>for循环不同的代码</p>
+<p>for循环还可以重复不同的代码，这主要是因为使用了计数器，计数器在每次循环过程中都会有变化。</p>
+<p>例如，输入1到100岁</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本写法</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'这个人今年'</span>+i+<span class="string">'岁'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例如求输入1到100岁，并提示出生、死亡</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//for 里面是可以添加其他语句的</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span>(i==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'出生'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">100</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'死了'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'这个人今年'</span>+i+<span class="string">'岁'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2双重for循环"><a href="#1-2双重for循环" class="headerlink" title="1.2双重for循环"></a>1.2双重for循环</h3><p>双重for循环概述</p>
+<p>循环嵌套是指在一个循环语句中再定义一个循环语句的语法结构，例如在for循环语句中，可以再嵌套一个for循环，这样的for循环语句我们称之为双重for循环.</p>
+<p>双重for循环</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (外循环的初始; 外循环的条件; 外循环的操作表达式) &#123;</span><br><span class="line">    <span class="keyword">for</span> (内循环的初始; 内循环的条件; 内循环的操作表达式) &#123;  </span><br><span class="line">       需执行的代码;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>内层循环可以看做外层循环的语句</li>
+<li>内层循环执行的顺序也要遵循 for 循环的执行顺序 </li>
+<li>外层循环执行一次，内层循环要执行全部次数</li>
+</ul>
+<p>打印五行五列星星</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> star=<span class="string">''</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">5</span>;j++)&#123;</span><br><span class="line">    star+=<span class="string">'★'</span></span><br><span class="line">  &#125;</span><br><span class="line">  star+=<span class="string">'\n'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(star);</span><br></pre></td></tr></table></figure>
+<p>核心逻辑：</p>
+<p>1.内层循环负责一行打印五个星星</p>
+<p>2.外层循环负责打印五行</p>
+<p>for 循环小结</p>
+<ul>
+<li>for 循环可以重复执行某些相同代码</li>
+<li>for 循环可以重复执行些许不同的代码，因为我们有计数器</li>
+<li>for 循环可以重复执行某些操作，比如算术运算符加法操作</li>
+<li>随着需求增加，双重for循环可以做更多、更好看的效果</li>
+<li>双重 for 循环，外层循环一次，内层 for 循环全部执行</li>
+<li>for 循环是循环条件和数字直接相关的循环</li>
+</ul>
+<h3 id="1-3-while循环"><a href="#1-3-while循环" class="headerlink" title="1.3 while循环"></a>1.3 while循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">while语句可以在条件表达式为真的前提下，循环执行指定的一段代码，直到表达式不为真结束循环。</span><br><span class="line">while语句的语法结构如下:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while(条件表达式)</span><br><span class="line">&#123;</span><br><span class="line">  //循环体代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行思路</p>
+<p>先执行条件表达式，如果结果为true，则执行循环表达式代码；如果为false，则退出循环，执行后面代码</p>
+<p>执行循环体代码</p>
+<p>循环体代码执行完毕后，程序会继续判断执行条件表达式，如果条件扔为true，则会继续执行循环体，直到循环条件为false时，整个循环过程才会结束</p>
+<p><strong>注意</strong></p>
+<p>使用while循环时一定要注意，它必须要有退出条件，否则会成为死循环</p>
+<p>while循环和for循环的不同之处在于while循环可以做较为复杂的条件判断，比如判断用户名和，密码。</p>
+<h3 id="1-4-do-while"><a href="#1-4-do-while" class="headerlink" title="1.4 do-while"></a>1.4 do-while</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">do......while 语句其实是while语句的一个变体。该循环会执行一次代码块，然后对条件表达式进行判断，如果为真，就会重复执行循环体，否组退出。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">do&#123;</span><br><span class="line">  //循环代码  ---条件为true时重复执行循环体代码</span><br><span class="line">&#125;</span><br><span class="line">while(条件表达式)</span><br></pre></td></tr></table></figure>
+<p>先执行一次循环体代码 </p>
+<ul>
+<li>再执行条件表达式，如果结果为 true，则继续执行循环体代码，如果为 false，则退出循环，继续执行后面代码</li>
+</ul>
+<p>注意：先再执行循环体，再判断，do…while循环语句至少会执行一次循环体代码</p>
+<h3 id="1-5-continue、break"><a href="#1-5-continue、break" class="headerlink" title="1.5 continue、break"></a>1.5 continue、break</h3><p>continue关键字用于立即跳出本次循环，继续下一次循环(本次循环体continue之后的代码就会少执行一次)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'这个包子有虫子，扔掉'</span>);</span><br><span class="line">        <span class="keyword">continue</span>; <span class="comment">// 跳出本次循环，跳出的是第3次循环 </span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">'我正在吃第'</span> + i + <span class="string">'个包子呢'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>break</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'这个包子有虫子，扔掉'</span>);</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 结束整个循环 </span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">'我正在吃第'</span> + i + <span class="string">'个包子呢'</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                
+                <li class="previous">
+                    <a href="/2018/04/26/JavaScript-04/">&larr; Previous Post</a>
+                </li>
+                
+                
+                <li class="next">
+                    <a href="/2018/04/22/JavaScript-02/">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YulongLin&#39;s Blog 2019
+                    <br>
+                    Theme by <a href="http://beantech.org/">Bean Tech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://www.linyulong.club">YulongLin&#39;s Blog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/script.js"></script>
+
+
+
+
+</body>
+</html>
