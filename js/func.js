@@ -34,11 +34,11 @@ fnTextPopup(['CSS', 'HTML', 'JavaScript', 'jQuery', 'Php', 'Node.js', 'Vue', 'æ³
 var text = document.title
 var timerID
 
-newtext();
-
 function newtext() {
     clearTimeout(timerId)
     document.title = text.substring(1, text.length) + text.substring(0, 1)
     text = document.title.substring(0, text.length)
     timerId = setTimeout("newtext()", 500)
 }
+
+newtext();
